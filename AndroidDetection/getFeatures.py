@@ -22,7 +22,8 @@ def get_permissions(path, filename):
 def get_apis(path, filename):
     app = apk.APK(path)
     app_dex = dvm.DalvikVMFormat(app.get_dex())
-    app_x = analysis.newVMAnalysis(app_dex)
+    # app_x = analysis.newVMAnalysis(app_dex)
+    app_x=analysis.Analysis(app_dex)
     methods = set()
     cs = [cc.get_name() for cc in app_dex.get_classes()]
 
@@ -117,21 +118,21 @@ def get_services(path, filename):
 
 def writeToTxt(str, file, filename):
     global count
-    fm = open('%d' % count + '.txt', 'w')
+    fm = open('%s' % filename + '.txt', 'w')
     # fm.write(str)
     # fm.write("\n")
     for i in file:
         tmp = i.split('.')
         final = tmp[-1]
         fm.write(final)
-        fm.write("\t")
+        fm.write("\n")
     fm.close()
     count += 1
 
 
 def main(path, apkname):
-    get_permissions(path, apkname)
-    # get_apis(path, apkname)
+    # get_permissions(path, apkname)
+    get_apis(path, apkname)
     # get_providers(path, apkname)
     # get_package(path, apkname)
     # get_activities(path, apkname)

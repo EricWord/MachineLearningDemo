@@ -3,11 +3,11 @@ import os
 import os.path
 import sys
 import subprocess
-import getFeatures
+from AndroidDetection import getFeatures
 
-rootdir = "D:/Sample/Good//"
-destdir = "D:/Sample/workSample/badDone//"
-command = "java -jar D://apktool.jar"
+rootdir = "D:/cgs/File/data/0test0411//"
+destdir = "D:/cgs/File/data/0tesResultst0411"
+command = "java -jar D:/cgs/software/jar/apktool.jar"
 
 
 class Packages:
@@ -33,12 +33,11 @@ class Packages:
                         getFeatures.main(thefile, apkname)
                         print
                         "******************well done******************"
-                except IOError, err:
-                    print
-                    err
+                except IOError as err:
+                    print(err)
                     sys.exit()
 
 
 if __name__ == "__main__":
-    dir = Packages(rootdir, 'e:/')
+    dir = Packages(rootdir, 'd:/')
     dir.check()
