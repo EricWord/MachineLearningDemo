@@ -5,8 +5,8 @@ import sys
 import subprocess
 from AndroidDetection import getFeatures
 
-rootdir = "D:/cgs/File/data/0test0411//"
-destdir = "D:/cgs/File/data/0tesResultst0411"
+rootdir = "D:/cgs/File/data/0test0412/BadApk0/"
+destdir = "D:/cgs/File/data/0test0412/otherGoodApksRes/"
 command = "java -jar D:/cgs/software/jar/apktool.jar"
 
 

@@ -118,7 +118,7 @@ def get_services(path, filename):
 
 def writeToTxt(str, file, filename):
     global count
-    fm = open('%s' % filename + '.txt', 'w')
+    fm = open('D:/cgs/File/data/0test0412/BadApkResult2/%s' % filename + '.txt', 'w')
     # fm.write(str)
     # fm.write("\n")
     for i in file:
@@ -131,8 +131,8 @@ def writeToTxt(str, file, filename):
 
 
 def main(path, apkname):
-    # get_permissions(path, apkname)
-    get_apis(path, apkname)
+    get_permissions(path, apkname)
+    # get_apis(path, apkname)
     # get_providers(path, apkname)
     # get_package(path, apkname)
     # get_activities(path, apkname)
