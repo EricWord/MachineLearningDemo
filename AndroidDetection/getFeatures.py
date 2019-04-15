@@ -118,7 +118,7 @@ def get_services(path, filename):
 
 def writeToTxt(str, file, filename):
     global count
-    fm = open('D:/cgs/File/data/0test0412/BadApkResult2/%s' % filename + '.txt', 'w')
+    fm = open('E:/7BiShe/goodAPKs/1501-1800/1501-1800Results2/%s' % filename + '.txt', 'w')
     # fm.write(str)
     # fm.write("\n")
     for i in file:

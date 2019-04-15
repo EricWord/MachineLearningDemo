@@ -11,7 +11,7 @@ pd.set_option('display.max_columns', 1000)
 pd.set_option('display.width', 1000)
 pd.set_option('display.max_colwidth', 1000)
 # 1.读取数据
-path="D:/cgs/File/CSV/20190414/androidDetection_2019_04_14_21_59_19.csv"
+path="D:/cgs/File/CSV/20190414/androidDetection_2019_04_15_09_27_23.csv"
 # column_name=['Sample code number',
 #              'Clump Thickness',
 #             'Uniformity of Cell Size',
@@ -35,23 +35,23 @@ data=pd.read_csv(path)
 x=data.iloc[:,1:-1]
 # print(x)
 y=data["apk_attribute"]
-print(y)
+# print(y)
 # print(data.columns.values.tolist())
 
 # 3.划分数据集
-x_train,x_test,y_train,y_test=train_test_split(x,y)
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.25,random_state=22)
 # print(x_train)
 
 # 4.特征工程
 # 实例化StandardScaler
-# transfer = StandardScaler()
-# x_train=transfer.fit_transform(x_train)
-# x_test=transfer.fit(x_test)
-# print(x_train)
+transfer = StandardScaler()
+x_train=transfer.fit_transform(x_train)
+x_test=transfer.transform(x_test)
+print(x_test)
 
 # 实例化 LogisticRegression
-# estimator = LogisticRegression()
-# estimator.fit(x_train,y_train)
+estimator = LogisticRegression()
+estimator.fit(x_train,y_train)
 # 逻辑回归的模型参数：回归系数和偏置
 # print(estimator.coef_)
 # print(estimator.intercept_)
@@ -61,6 +61,6 @@ x_train,x_test,y_train,y_test=train_test_split(x,y)
 # # 方法1:直接对比真实值和预测值
 # print("y_predic:\n",y_predict)
 # print("直接对比真实值和预测值:\n",y_test==y_predict)
-# # 方法2:计算准去率
-# score=estimator.score(x_test,y_test)
-# print("准确率为:\n",score)
+# # 方法2:计算准确率
+score=estimator.score(x_test,y_test)
+print("准确率为:\n",score)
