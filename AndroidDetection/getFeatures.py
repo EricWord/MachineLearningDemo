@@ -121,7 +121,7 @@ def get_services(path, filename):
 def writeToTxt(str, file, filename):
     global count
     currentTime=time.strftime('%Y_%m_%d %H_%M_%S',time.localtime(time.time()))
-    fm = open('E:/7BiShe/badAPKs/601-900/601-900Results2/%s' % filename+'_'+currentTime + '.txt', 'w')
+    fm = open('E:/7BiShe/badAPKs/3901-4200/3901-4200Results/%s' % filename+'_'+currentTime + '.txt', 'w')
     # fm.write(str)
     # fm.write("\n")
     for i in file:
