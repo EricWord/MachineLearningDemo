@@ -3,9 +3,10 @@ import os
 import os.path
 import sys
 import subprocess
+import time
 from AndroidDetection import getFeatures
 
-rootdir = "E:/7BiShe/goodAPKs/1501-1800/1501-1800doing/"
+rootdir = "E:/7BiShe/badAPKs/601-900/601-900doing/"
 destdir = "D:/cgs/File/data/0test0412/otherGoodApksRes/"
 command = "java -jar D:/cgs/software/jar/apktool.jar"
 

@@ -1,3 +1,5 @@
+import time
+
 __author__ = 'Administrator'
 # coding=utf-8
 from androguard.core.bytecodes import apk, dvm
@@ -118,7 +120,8 @@ def get_services(path, filename):
 
 def writeToTxt(str, file, filename):
     global count
-    fm = open('E:/7BiShe/goodAPKs/1501-1800/1501-1800Results2/%s' % filename + '.txt', 'w')
+    currentTime=time.strftime('%Y_%m_%d %H_%M_%S',time.localtime(time.time()))
+    fm = open('E:/7BiShe/badAPKs/601-900/601-900Results2/%s' % filename+'_'+currentTime + '.txt', 'w')
     # fm.write(str)
     # fm.write("\n")
     for i in file:
